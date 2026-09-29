@@ -1,0 +1,8 @@
+{
+  "_comment": "One procedural bed per concept, rendered by tools/render_music.sh with ~/src/utils music_theory at the tag pinned there (byte-reproducible from this file + that tag). Degrade does the horror: past 0.5 the mode darkens, tempo drags, the melody drifts and the tape crushes.",
+  "anomaly": {"key": "A2", "mode": "minor", "tempo_bpm": 62, "progression": [1, 6, 4, 5], "bars": 16, "seed": 20260929, "waveform": "triangle", "degrade": 0.35},
+  "stalker": {"key": "E3", "mode": "phrygian", "tempo_bpm": 132, "progression": [1, 2, 1, 2], "bars": 16, "seed": 20260929, "waveform": "square", "degrade": 0.25},
+  "wrong_place": {"key": "G3", "mode": "major", "tempo_bpm": 60, "progression": [1, 4, 5, 1], "bars": 16, "seed": 20260929, "waveform": "triangle", "degrade": 0.7},
+  "found_footage": {"key": "A3", "mode": "minor", "tempo_bpm": 76, "progression": [1, 6, 3, 7], "bars": 16, "seed": 20260929, "waveform": "saw", "degrade": 0.85},
+  "blind_nav": {"key": "D2", "mode": "phrygian", "tempo_bpm": 50, "progression": [1, 2, 1, 7], "bars": 16, "seed": 20260929, "waveform": "sine", "degrade": 0.5}
+}
