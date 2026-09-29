@@ -10,3 +10,5 @@ assets
 .DS_Store
 .vscode/
 .idea/
+# agent worktrees
+.claude/

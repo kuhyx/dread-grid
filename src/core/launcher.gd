@@ -6,11 +6,9 @@ signal chosen(game: String)
 
 
 func _ready() -> void:
-	set_anchors_preset(Control.PRESET_FULL_RECT)
-	var bg: ColorRect = ColorRect.new()
-	bg.color = Color(0.05, 0.04, 0.05)
-	bg.set_anchors_preset(Control.PRESET_FULL_RECT)
-	add_child(bg)
+	# The parent is a plain Node, so anchors have nothing to fill: paint the
+	# clear colour instead of a full-rect background.
+	RenderingServer.set_default_clear_color(Color(0.05, 0.04, 0.05))
 	var box: VBoxContainer = VBoxContainer.new()
 	box.position = Vector2(120, 60)
 	box.add_theme_constant_override("separation", 18)
