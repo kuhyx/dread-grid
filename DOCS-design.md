@@ -35,8 +35,8 @@ Flag the object you face. The back door opens at 6 found.
 **Found footage** (`src/logic/found_footage/`). A building of rooms, 7
 scripted events triggered by proximity, each active a few seconds. An event
 is captured if you are recording, facing it, in line of sight. Recording
-drains 1 %/s-equivalent, idle a little; lose when empty or when fewer events
-remain than you still need.
+empties the battery in 6 min (100/360 % per s), idle drains 100/1800 % per s;
+lose when empty or when fewer events remain than you still need.
 
 **Blind descent** (`src/logic/blind_nav/`). Iron-Lung-style: a rock-strewn
 trench you never see directly. Coordinates, sonar ping (8 directions),
