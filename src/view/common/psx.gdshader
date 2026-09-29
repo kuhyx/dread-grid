@@ -23,7 +23,9 @@ void vertex() {
 }
 
 void fragment() {
-	float n = hash(floor(world_pos * 5.0));
+	// Grid surfaces sit on exact multiples of 0.2 m; the small offset keeps
+	// each one inside a single grime block instead of flickering between two.
+	float n = hash(floor(world_pos * 5.0 + 0.037));
 	vec3 base = albedo.rgb * COLOR.rgb * (1.0 - grime + grime * n);
 	ALBEDO = base;
 	EMISSION = base * emission;

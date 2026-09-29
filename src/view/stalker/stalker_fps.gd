@@ -10,10 +10,6 @@ const LOCKER_GREY: Color = Color(0.42, 0.44, 0.47)
 const EXIT_RED: Color = Color(0.75, 0.08, 0.06)
 const FOLLOW: float = 8.0
 const SLIT: float = 0.08
-## The PSX grime hashes floor(world position * 5); walls and floors of a
-## 2 m grid sit exactly on those boundaries and shimmer into stripes. A 1 cm
-## nudge of the whole level keeps every surface inside one grime block.
-const GRIME_OFFSET: Vector3 = Vector3(0.01, 0.01, 0.01)
 
 var game: StalkerGame
 var _figure: Node3D
@@ -39,7 +35,6 @@ func build_world() -> void:
 	environment.fog_density = 0.09
 	environment.ambient_light_color = Color(0.17, 0.16, 0.17)
 	var level_root: Node3D = Node3D.new()
-	level_root.position = GRIME_OFFSET
 	world.add_child(level_root)
 	target = level_root
 	build_grid(game.grid, WALL, FLOOR)

@@ -22,7 +22,9 @@ generically, so a new anomaly is a row. First loop is always normal; 50 %
 anomaly chance after, never the same anomaly twice running.
 
 **Stalker** (`src/logic/stalker/`). 15x15 maze with loops, 3 keys in far
-dead ends, exit in the far corner, lockers to hide in. The stalker patrols,
+dead ends, exit at the farthest cell, lockers to hide in (at least 6, and no
+floor cell more than 8 steps from one: with exactly 6 the bot lost 4 of 100
+seeds at first-person pace). The stalker patrols,
 hunts on sight (6 cells, line of sight) or on noise (walking, 3 cells), and
 catches on the same or an adjacent cell unless you are hidden and it did not
 see you hide. Hunting speed is just under the player's.
