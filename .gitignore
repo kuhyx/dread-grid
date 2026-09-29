@@ -1,0 +1,12 @@
+# generated / dependencies
+.godot/
+addons/gut/
+.venv/
+__pycache__/
+*.log
+# binaries live in ../dread-grid_binaries (install.sh); the link is a file to git
+assets
+# OS / editor
+.DS_Store
+.vscode/
+.idea/

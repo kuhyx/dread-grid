@@ -1,0 +1,45 @@
+name: ci
+
+# Lint (warnings-as-errors parse), GUT tests, and the done gate: all 15
+# games autodriven to a win. The shared gates have their own workflows.
+on:
+  push:
+    branches: [main]
+  pull_request:
+  workflow_dispatch:
+
+env:
+  GODOT_VERSION: "4.7.2"
+
+jobs:
+  check:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with: { python-version: "3.x" }
+
+      - name: Install Godot
+        run: |
+          curl -fsSL -o godot.zip "https://github.com/godotengine/godot/releases/download/${GODOT_VERSION}-stable/Godot_v${GODOT_VERSION}-stable_linux.x86_64.zip"
+          unzip -q godot.zip
+          sudo mv "Godot_v${GODOT_VERSION}-stable_linux.x86_64" /usr/local/bin/godot
+          rm godot.zip
+
+      - name: Check out the shared gates
+        uses: actions/checkout@v4
+        with:
+          repository: kuhyx/utils
+          path: .utils
+
+      - name: Install project tooling and assets
+        run: UTILS_ROOT="$PWD/.utils" ./install.sh
+
+      - name: Lint
+        run: scripts/lint.sh
+
+      - name: Test
+        run: scripts/test.sh
+
+      - name: Autodrive all 15 games
+        run: scripts/autodrive_all.sh

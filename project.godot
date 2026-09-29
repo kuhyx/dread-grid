@@ -1,0 +1,32 @@
+; Engine configuration file.
+; Godot 4.7 project. GL Compatibility so the PSX look renders the same under
+; Xvfb (llvmpipe) as on the desktop. Every GDScript warning is an error and the
+; "unsafe"/"untyped" family is on, so the headless parse in scripts/lint.sh
+; fails on anything the editor would only underline.
+config_version=5
+
+[application]
+config/name="dread-grid"
+run/main_scene="res://main.tscn"
+config/features=PackedStringArray("4.7", "GL Compatibility")
+
+[debug]
+gdscript/warnings/treat_warnings_as_errors=true
+gdscript/warnings/untyped_declaration=2
+gdscript/warnings/inferred_declaration=2
+gdscript/warnings/unsafe_property_access=2
+gdscript/warnings/unsafe_method_access=2
+gdscript/warnings/unsafe_cast=2
+gdscript/warnings/unsafe_call_argument=2
+gdscript/warnings/return_value_discarded=2
+
+[display]
+window/size/viewport_width=1280
+window/size/viewport_height=720
+window/stretch/mode="canvas_items"
+window/stretch/aspect="keep"
+
+[rendering]
+renderer/rendering_method="gl_compatibility"
+renderer/rendering_method.mobile="gl_compatibility"
+textures/canvas_textures/default_texture_filter=0
