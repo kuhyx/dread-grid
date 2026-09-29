@@ -92,8 +92,8 @@ func actions() -> Array[StringName]:
 func hud_line() -> String:
 	var secs: int = int(elapsed)
 	return (
-		"Found %d/%d (of %d)   false flags %d   %d:%02d   WASD move, E flag, Q look"
-		% [found, TO_OPEN, WRONG_COUNT, false_flags, floori(elapsed / 60.0), secs % 60]
+		"Found %d of %d (door opens at %d)   false flags %d   %d:%02d   E flag, Q look"
+		% [found, WRONG_COUNT, TO_OPEN, false_flags, floori(elapsed / 60.0), secs % 60]
 	)
 
 
