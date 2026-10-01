@@ -42,6 +42,7 @@ func _show_launcher() -> void:
 	_close_view()
 	_launcher = Launcher.new()
 	add_child(_launcher)
+	print("LAUNCHER ready")
 	Wire.link(_launcher.chosen, _open)
 
 

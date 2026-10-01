@@ -47,13 +47,17 @@ static func sample(sample_name: String) -> AudioStream:
 
 
 ## The concept's procedural music bed, looping, or null if not rendered.
+## Loaded as an imported resource (not from a disk path) so the web build,
+## where res:// lives inside the .pck, plays it too. Looping is set here, in
+## code, so no import sidecar can quietly turn it off.
 static func music(concept_id: String) -> AudioStreamWAV:
-	var path: String = ProjectSettings.globalize_path("res://assets/music/%s.wav" % concept_id)
-	if not FileAccess.file_exists(path):
+	var path: String = "res://assets/music/%s.wav" % concept_id
+	if not ResourceLoader.exists(path):
 		return null
-	var wav: AudioStreamWAV = AudioStreamWAV.load_from_file(path)
+	var wav: AudioStreamWAV = load(path)
 	wav.loop_mode = AudioStreamWAV.LOOP_FORWARD
-	wav.loop_end = wav.data.size() / (4 if wav.stereo else 2)
+	wav.loop_begin = 0
+	wav.loop_end = int(wav.get_length() * wav.mix_rate)
 	return wav
 
 
