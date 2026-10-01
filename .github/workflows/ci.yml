@@ -43,3 +43,9 @@ jobs:
 
       - name: Autodrive all 15 games
         run: scripts/autodrive_all.sh
+
+      - name: Export web and smoke-test it in headless Chromium
+        run: |
+          .venv/bin/python -m playwright install --with-deps chromium >/dev/null
+          scripts/export_web.sh "$PWD/../web"
+          .venv/bin/python tests/web_smoke.py "$PWD/../web" "$PWD/../web_smoke.png"
