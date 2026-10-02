@@ -11,7 +11,7 @@
 
 set -euo pipefail
 
-REPO_ROOT="$(git rev-parse --show-toplevel)"
+REPO_ROOT="$(git -C "$(dirname "${BASH_SOURCE[0]}")" rev-parse --show-toplevel)"
 readonly REPO_ROOT
 readonly UTILS_ROOT="${UTILS_ROOT:-$HOME/src/utils}"
 

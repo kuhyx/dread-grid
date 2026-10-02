@@ -17,7 +17,7 @@ rules that are not obvious from the code.
 - No `# gdlint:ignore` / warning-ignore annotations without asking first.
 - 250 lines per file, code and prose (shared gate). Split, do not squeeze.
 - No binaries in git. GUT (`addons/gut/`) and `assets` (symlink into
-  `../dread-grid_binaries/`) are gitignored and made by `install.sh`.
+  `~/data/dread-grid_binaries/`) are gitignored and made by `install.sh`.
 - After adding a `class_name` script run `godot --headless --path . --import`
   or every user of it fails with "Could not find type".
 - Never open a window on the live display: screenshots go through

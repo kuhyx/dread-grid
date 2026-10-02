@@ -41,4 +41,4 @@ Procedural: geometry, the PS1 look (`src/view/common/psx.gdshader`) and the
 music beds (`content/music_beds.json`, rendered by `tools/render_music.sh`
 with `music_theory` from `kuhyx/utils`). Sampled: CC0 sounds pinned by
 sha256 in `assets.lock.json`, credited in `DOCS-credits.md`. Nothing binary
-is committed; `install.sh` builds `assets/` in `../dread-grid_binaries/`.
+is committed; `install.sh` builds `assets/` in `~/data/dread-grid_binaries/`.
