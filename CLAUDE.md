@@ -60,3 +60,12 @@ arrows, via `GameView.MOVE_KEYS`) plus concept actions (`turn_back`, `hide`,
   (`~/src/utils/music_theory`, pinned tag). `assets.lock.json` +
   `tools/fetch_assets.sh` — CC0 samples, sha256-pinned; credits in
   `DOCS-credits.md`.
+
+## Commands
+
+- run: `godot --path .`
+- test: `scripts/test.sh`
+- test-changed: `scripts/test_changed.sh`
+- lint: `scripts/lint.sh`
+- coverage: n/a: no coverage tooling for this stack
+- coverage-gaps: n/a: no coverage tooling for this stack
